@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "InkToken",
+    "name": "Ink Global Market",
+    "symbol": "INK",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8000,
+    "initialMarketCapWei": "3800000000000000000000",
+    "remainderTo": "0x12a7aad083cef06fef7c295514b52fc8bc81960d"
+  },
+  "notes": "InkToken (src/InkToken.sol) is a fixed-supply ERC-20 built on the unmodified OpenZeppelin Contracts v5.4.0 ERC20 vendored in vendor/openzeppelin. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 INK (1000000000000000000000000000 minor units, 18 decimals) once to msg.sender, which is the factory under launchCustom. The token has no owner, roles, mint, burn, pause, blacklist, freeze, seizure, upgrade or proxy mechanism, performs no external calls and applies no transfer fee, tax, burn, rebasing or holder restriction, so every launch flow (the swarm's share to the distributor, the single-sided pool seed through the PoolManager, the remainder to economics.remainderTo, and later claims and swaps) moves exactly its stated amount. There are no application contracts, no initialization calls and no linked libraries. The 1000 bps swarm share is taken by the factory and is not written here. pool.initialPrice is provenance only: the deployer derives the opening price from economics.initialMarketCapWei and the token supply."
+}
